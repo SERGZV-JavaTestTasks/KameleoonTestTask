@@ -1,11 +1,12 @@
 package project.entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-public class User
+public class User implements Comparable<User>
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,8 +15,8 @@ public class User
     private String email;
     private String password;
     private Date dateOfCreation = new Date();
-    @OneToMany
-    private List<Quote> quotes;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Quote> quotes = new ArrayList<>();
 
     public void setName(String name) { this.name = name; }
     public void setEmail(String email) { this.email = email; }
@@ -30,6 +31,18 @@ public class User
         this.password = password;
         this.dateOfCreation = dateOfCreation;
         this.quotes = quotes;
+    }
+
+    public void addQuote(Quote quote)
+    {
+        quotes.add(quote);
+        System.out.println("test");
+    }
+
+    @Override
+    public int compareTo(User o)
+    {
+        return (int)(this.id - o.id);
     }
 
     @Override

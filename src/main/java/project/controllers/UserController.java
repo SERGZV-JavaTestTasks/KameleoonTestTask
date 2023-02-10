@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import project.entities.User;
 import project.service.UserService;
 
@@ -20,10 +21,19 @@ public class UserController
         this.userService = userService;
     }
 
-    @PostMapping("/create")
+    @PostMapping("/createUser")
     public String createUser(@ModelAttribute User user)
     {
         userService.createUser(user);
         return "user/created";
+    }
+
+    @PostMapping("/createQuote")
+    public String createQuote(@RequestParam String quote, @RequestParam Long userId)
+    {
+        var user = userService.getUser(userId);
+        userService.createQuote(quote, user);
+
+        return "quote/created";
     }
 }
