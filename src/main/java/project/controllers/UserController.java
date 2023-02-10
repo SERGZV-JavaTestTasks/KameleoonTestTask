@@ -2,10 +2,8 @@ package project.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import project.entities.User;
 import project.service.UserService;
 
@@ -35,5 +33,14 @@ public class UserController
         userService.createQuote(quote, user);
 
         return "quote/created";
+    }
+
+    @GetMapping("/getQuote")
+    public String getQuote(@RequestParam Long quoteId, Model model)
+    {
+        var quote = userService.getQuote(quoteId);
+        model.addAttribute("quote", quote);
+
+        return "quote/show";
     }
 }

@@ -21,6 +21,7 @@ public class User implements Comparable<User>
     public void setName(String name) { this.name = name; }
     public void setEmail(String email) { this.email = email; }
     public void setPassword(String password) { this.password = password; }
+    public List<Quote> getQuotes() { return quotes; }
 
     public User() {}
 
@@ -36,7 +37,6 @@ public class User implements Comparable<User>
     public void addQuote(Quote quote)
     {
         quotes.add(quote);
-        System.out.println("test");
     }
 
     @Override
