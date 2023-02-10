@@ -18,6 +18,11 @@ public class Quote
     @ManyToMany
     private Set<User> voters = new TreeSet<>();
 
+    public String getContent() { return content; }
+    public Date getDateOfUpdate() { return dateOfUpdate; }
+    public User getMessageAuthor() { return messageAuthor; }
+    public Set<User> getVoters() { return voters; }
+
     public Quote() {}
 
     public Quote(String content, User messageAuthor)

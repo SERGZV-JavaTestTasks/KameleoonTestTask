@@ -43,4 +43,13 @@ public class UserController
 
         return "quote/show";
     }
+
+    @GetMapping("/getRandomQuote")
+    public String getRandomQuote(Model model)
+    {
+        var quote = userService.getRandomQuote();
+        model.addAttribute("quote", quote);
+
+        return "quote/show";
+    }
 }

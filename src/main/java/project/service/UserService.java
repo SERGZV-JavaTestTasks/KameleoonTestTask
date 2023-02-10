@@ -7,15 +7,9 @@ import project.entities.User;
 import project.repository.QuoteRepository;
 import project.repository.UserRepository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-
 @Service
 public class UserService
 {
-    @PersistenceContext
-    EntityManager entityManager;
     UserRepository userRepository;
     QuoteRepository quoteRepository;
 
@@ -47,5 +41,11 @@ public class UserService
     public Quote getQuote(Long quoteId)
     {
         return quoteRepository.getById(quoteId);
+    }
+
+    public Quote getRandomQuote()
+    {
+        var quote = quoteRepository.getRandomQuote();
+        return quote;
     }
 }
