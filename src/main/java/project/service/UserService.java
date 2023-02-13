@@ -62,14 +62,6 @@ public class UserService
         }
         else
         {
-            // Test code
-            var testQuotes = user.getSetWorstQuotes (numberOfQuotes);
-            for (var testQuote : testQuotes)
-            {
-                System.out.println(testQuote.getQuoteRating());
-            }
-            //
-
             return user.getSetWorstQuotes(numberOfQuotes);
         }
     }
