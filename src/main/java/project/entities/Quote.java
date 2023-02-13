@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 @Entity
-public class Quote
+public class Quote implements Comparable<Quote>
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,12 +50,20 @@ public class Quote
     }
 
     @Override
+    public int compareTo(Quote o)
+    {
+        if ((o.quoteRating - quoteRating) != 0) return o.quoteRating - quoteRating;
+        return (int)(id - o.id);
+    }
+
+    @Override
     public String toString()
     {
         return "Quote{" +
                 "id=" + id +
                 ", content='" + content + '\'' +
                 ", dateOfUpdate=" + dateOfUpdate +
+                ", quoteRating=" + quoteRating +
                 '}';
     }
 }

@@ -1,9 +1,7 @@
 package project.entities;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Entity
 public class User implements Comparable<User>
@@ -16,17 +14,17 @@ public class User implements Comparable<User>
     private String password;
     private Date dateOfCreation = new Date();
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Quote> quotes = new ArrayList<>();
+    private Set<Quote> quotes = new TreeSet<>();
 
     public Long getId() { return id; }
     public void setName(String name) { this.name = name; }
     public void setEmail(String email) { this.email = email; }
     public void setPassword(String password) { this.password = password; }
-    public List<Quote> getQuotes() { return quotes; }
+    public Set<Quote> getQuotes() { return quotes; }
 
     public User() {}
 
-    public User(String name, String email, String password, Date dateOfCreation, List<Quote> quotes)
+    public User(String name, String email, String password, Date dateOfCreation, Set<Quote> quotes)
     {
         this.name = name;
         this.email = email;
@@ -38,6 +36,30 @@ public class User implements Comparable<User>
     public void addQuote(Quote quote)
     {
         quotes.add(quote);
+    }
+
+    public TreeSet<Quote> getSetBestQuotes(int numberOfQuotes)
+    {
+        TreeSet<Quote> returnedQuotes = new TreeSet<>();
+
+        var iteration = 0;
+        var quotesSize = quotes.size();
+        for (var quote : quotes)
+        {
+            if (iteration < quotesSize && iteration < numberOfQuotes)
+            {
+                returnedQuotes.add(quote);
+            }
+
+            iteration ++;
+        }
+
+        return returnedQuotes;
+    }
+
+    public TreeSet<Quote> getSetWorstQuotes(int numberOfQuotes)
+    {
+        return null;
     }
 
     public void deleteQuote(Long quoteId)

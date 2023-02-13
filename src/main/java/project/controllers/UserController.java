@@ -53,6 +53,21 @@ public class UserController
         return "quote/show";
     }
 
+    @GetMapping("/showSetOfQuotes")
+    public String showSetOfQuotes
+    (
+        @RequestParam Long userId,
+        @RequestParam int numberOfQuotes,
+        @RequestParam boolean bestQuotes,
+        Model model
+    )
+    {
+        var setOfQuotes = userService.getSetOfQuotes(userId, numberOfQuotes, bestQuotes);
+        model.addAttribute("setOfQuotes", setOfQuotes);
+
+        return "quote/showSet";
+    }
+
     @PatchMapping("/editQuote")
     public String editQuote(@RequestParam String newQuoteContent, @RequestParam Long quoteId)
     {

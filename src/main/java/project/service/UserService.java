@@ -2,10 +2,14 @@ package project.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 import project.entities.Quote;
 import project.entities.User;
 import project.repository.QuoteRepository;
 import project.repository.UserRepository;
+
+import java.util.Set;
+import java.util.TreeSet;
 
 @Service
 public class UserService
@@ -23,7 +27,6 @@ public class UserService
     public void createUser(User user)
     {
         userRepository.save(user);
-        System.out.println("user created: " + user);
     }
 
     public User getUser(Long id)
@@ -49,6 +52,34 @@ public class UserService
         return quote;
     }
 
+    public Set<Quote> getSetOfQuotes(Long userId, int numberOfQuotes, boolean bestQuotes)
+    {
+        var user = userRepository.getById(userId);
+
+        if (bestQuotes)
+        {
+            var testQuotes = user.getSetBestQuotes(numberOfQuotes);
+            for (var testQuote : testQuotes)
+            {
+                System.out.println(testQuote.getQuoteRating());
+            }
+
+            return user.getSetBestQuotes(numberOfQuotes);
+        }
+        else
+        {
+            // Test code
+            var testQuotes = user.getSetWorstQuotes (numberOfQuotes);
+            for (var testQuote : testQuotes)
+            {
+                System.out.println(testQuote.getQuoteRating());
+            }
+            //
+
+            return user.getSetWorstQuotes(numberOfQuotes);
+        }
+    }
+
     public void editQuote(String newQuoteContent, Long quoteId)
     {
         var quote = quoteRepository.getById(quoteId);
@@ -64,9 +95,9 @@ public class UserService
         quoteRepository.save(quote);
     }
 
-    public void deleteQuote(Long UserId, Long quoteId)
+    public void deleteQuote(Long userId, Long quoteId)
     {
-        var user = userRepository.getById(UserId);
+        var user = userRepository.getById(userId);
         user.deleteQuote(quoteId);
         userRepository.save(user);
     }
