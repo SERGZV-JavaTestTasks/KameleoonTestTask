@@ -50,6 +50,7 @@ public class User implements Comparable<User>
             {
                 returnedQuotes.add(quote);
             }
+            else break;
 
             iteration ++;
         }
@@ -59,7 +60,33 @@ public class User implements Comparable<User>
 
     public TreeSet<Quote> getSetWorstQuotes(int numberOfQuotes)
     {
-        return null;
+        TreeSet<Quote> returnedQuotes = new TreeSet<>((o1, o2) ->
+        {
+            if ((o1.getQuoteRating() - o2.getQuoteRating()) != 0) return o1.getQuoteRating() - o2.getQuoteRating();
+            return (int)(o1.getId() - o2.getId());
+        });
+
+        TreeSet<Quote> bufferedQuotes = new TreeSet<>((o1, o2) ->
+        {
+            if ((o1.getQuoteRating() - o2.getQuoteRating()) != 0) return o1.getQuoteRating() - o2.getQuoteRating();
+            return (int)(o1.getId() - o2.getId());
+        });
+        bufferedQuotes.addAll(quotes);
+
+        var iteration = 0;
+        var quotesSize = quotes.size();
+        for (var bufferedQuote : bufferedQuotes)
+        {
+            if (iteration < quotesSize && iteration < numberOfQuotes)
+            {
+                returnedQuotes.add(bufferedQuote);
+            }
+            else break;
+
+            iteration ++;
+        }
+
+        return returnedQuotes;
     }
 
     public void deleteQuote(Long quoteId)

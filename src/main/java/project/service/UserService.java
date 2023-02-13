@@ -58,12 +58,6 @@ public class UserService
 
         if (bestQuotes)
         {
-            var testQuotes = user.getSetBestQuotes(numberOfQuotes);
-            for (var testQuote : testQuotes)
-            {
-                System.out.println(testQuote.getQuoteRating());
-            }
-
             return user.getSetBestQuotes(numberOfQuotes);
         }
         else
