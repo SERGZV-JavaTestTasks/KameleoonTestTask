@@ -13,6 +13,7 @@ public class Quote
     private Long id;
     private String content;
     private Date dateOfUpdate = new Date();
+    private int quoteRating;
     @ManyToOne
     private User messageAuthor;
     @ManyToMany
@@ -22,6 +23,7 @@ public class Quote
     public void setContent(String content) { this.content = content; }
     public String getContent() { return content; }
     public Date getDateOfUpdate() { return dateOfUpdate; }
+    public int getQuoteRating() { return quoteRating; }
     public User getMessageAuthor() { return messageAuthor; }
     public Set<User> getVoters() { return voters; }
 
@@ -31,6 +33,20 @@ public class Quote
     {
         this.content = content;
         this.messageAuthor = messageAuthor;
+    }
+
+    public void vote(User userVoter, boolean voteFor)
+    {
+        for (var voter : voters)
+        {
+            if (voter.getId().equals(userVoter.getId()))
+            {
+                return;
+            }
+        }
+
+        voters.add(userVoter);
+        quoteRating = (voteFor) ? 1 : -1;
     }
 
     @Override

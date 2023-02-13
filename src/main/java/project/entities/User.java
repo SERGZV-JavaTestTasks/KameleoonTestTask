@@ -18,6 +18,7 @@ public class User implements Comparable<User>
     @OneToMany(cascade = CascadeType.ALL)
     private List<Quote> quotes = new ArrayList<>();
 
+    public Long getId() { return id; }
     public void setName(String name) { this.name = name; }
     public void setEmail(String email) { this.email = email; }
     public void setPassword(String password) { this.password = password; }

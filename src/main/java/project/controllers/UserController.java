@@ -60,6 +60,18 @@ public class UserController
         return "quote/show";
     }
 
+    @PatchMapping("/voteForAQuote")
+    public String voteForAQuote
+    (
+        @RequestParam Long userVoterId,
+        @RequestParam Long votedQuoteId,
+        @RequestParam boolean voteFor
+    )
+    {
+        userService.voteForAQuote(userVoterId, votedQuoteId, voteFor);
+        return "quote/show";
+    }
+
     @DeleteMapping("/deleteQuote")
     public String deleteQuote(@RequestParam Long userId, @RequestParam Long quoteId, Model model)
     {

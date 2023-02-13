@@ -56,6 +56,14 @@ public class UserService
         quoteRepository.save(quote);
     }
 
+    public void voteForAQuote(Long userVoterId, Long votedQuoteId, boolean voteFor)
+    {
+        var userVoter = userRepository.getById(userVoterId);
+        var quote = quoteRepository.getById(votedQuoteId);
+        quote.vote(userVoter, voteFor);
+        quoteRepository.save(quote);
+    }
+
     public void deleteQuote(Long UserId, Long quoteId)
     {
         var user = userRepository.getById(UserId);
