@@ -39,6 +39,11 @@ public class User implements Comparable<User>
         quotes.add(quote);
     }
 
+    public void deleteQuote(Long quoteId)
+    {
+        quotes.removeIf(quote -> quote.getId() == quoteId);
+    }
+
     @Override
     public int compareTo(User o)
     {

@@ -55,4 +55,11 @@ public class UserService
         quote.setContent(newQuoteContent);
         quoteRepository.save(quote);
     }
+
+    public void deleteQuote(Long UserId, Long quoteId)
+    {
+        var user = userRepository.getById(UserId);
+        user.deleteQuote(quoteId);
+        userRepository.save(user);
+    }
 }

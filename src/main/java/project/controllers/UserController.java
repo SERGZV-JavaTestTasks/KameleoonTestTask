@@ -59,4 +59,13 @@ public class UserController
         userService.editQuote(newQuoteContent, quoteId);
         return "quote/show";
     }
+
+    @DeleteMapping("/deleteQuote")
+    public String deleteQuote(@RequestParam Long userId, @RequestParam Long quoteId, Model model)
+    {
+        userService.deleteQuote(userId, quoteId);
+        model.addAttribute("deletedQuoteId", quoteId);
+
+        return "quote/deleted";
+    }
 }
