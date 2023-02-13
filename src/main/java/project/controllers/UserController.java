@@ -52,4 +52,11 @@ public class UserController
 
         return "quote/show";
     }
+
+    @PatchMapping("/editQuote")
+    public String editQuote(@RequestParam String newQuoteContent, @RequestParam Long quoteId)
+    {
+        userService.editQuote(newQuoteContent, quoteId);
+        return "quote/show";
+    }
 }

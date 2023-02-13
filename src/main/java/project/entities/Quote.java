@@ -18,6 +18,7 @@ public class Quote
     @ManyToMany
     private Set<User> voters = new TreeSet<>();
 
+    public void setContent(String content) { this.content = content; }
     public String getContent() { return content; }
     public Date getDateOfUpdate() { return dateOfUpdate; }
     public User getMessageAuthor() { return messageAuthor; }

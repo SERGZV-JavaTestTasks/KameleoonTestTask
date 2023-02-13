@@ -48,4 +48,11 @@ public class UserService
         var quote = quoteRepository.getRandomQuote();
         return quote;
     }
+
+    public void editQuote(String newQuoteContent, Long quoteId)
+    {
+        var quote = quoteRepository.getById(quoteId);
+        quote.setContent(newQuoteContent);
+        quoteRepository.save(quote);
+    }
 }
