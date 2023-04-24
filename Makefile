@@ -5,7 +5,7 @@ test-run:
 test-remove:
 	docker rmi sergzv/kameleoon:v0.0.1
 	docker images
-test-reb&run:
+test-rebrun:
 	docker rmi sergzv/kameleoon:v0.0.1
 	docker build -t sergzv/kameleoon:v0.0.1 .
 	docker run --rm --name testtask sergzv/kameleoon:v0.0.1
