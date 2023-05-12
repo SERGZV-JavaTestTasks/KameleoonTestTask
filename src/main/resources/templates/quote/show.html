@@ -1,11 +1,11 @@
 <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Show quote</title>
 </head>
 <body>
-    A quote should be displayed on this page, but since frontend is not included in the task,
-    this stub is displayed here in the form of static text.
+    <p th:text="${quote.getContent()}"></p>
 </body>
 </html>

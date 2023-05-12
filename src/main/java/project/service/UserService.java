@@ -2,14 +2,12 @@ package project.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 import project.entities.Quote;
 import project.entities.User;
 import project.repository.QuoteRepository;
 import project.repository.UserRepository;
 
 import java.util.Set;
-import java.util.TreeSet;
 
 @Service
 public class UserService
