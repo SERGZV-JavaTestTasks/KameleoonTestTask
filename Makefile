@@ -23,3 +23,7 @@ remove-container:
 remove-image:
 	docker rmi sergzv/kameleoon:v0.0.2
 	docker images
+rebuild-run:
+	docker rmi sergzv/kameleoon:v0.0.2
+	docker build -t sergzv/kameleoon:v0.0.2 .
+	docker run -p 7777:8080 -d --name testtask sergzv/kameleoon:v0.0.2
