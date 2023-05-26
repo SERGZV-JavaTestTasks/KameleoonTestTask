@@ -27,3 +27,5 @@ rebuild-run:
 	docker rmi sergzv/kameleoon:v0.0.2
 	docker build -t sergzv/kameleoon:v0.0.2 .
 	docker run -p 7777:8080 -d --name testtask sergzv/kameleoon:v0.0.2
+run-vds:
+	docker run -d -p 7777:8080 --name testtask --rm sergzv/kameleoon:v0.0.3
