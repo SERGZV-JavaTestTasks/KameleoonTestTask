@@ -2,8 +2,8 @@
 Java backend test assignment for Kameleoon company
 
 Project requirements:
-  • source code should be published on https://github.com/
-  • Docker image should be published on https://hub.docker.com/
+  1) source code should be published on https://github.com/
+  2) Docker image should be published on https://hub.docker.com/
   • project should have docker-compose.yaml for local deploy, OR you can deploy it on a public hosting provider (Heroku, etc)
   • use any in-memory database (Derby, H2, SQLite)
   • use Java and Spring Boot
