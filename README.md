@@ -39,5 +39,6 @@ Satisfied project requirements:
 The project API allows you to:
   1) creation of a user account /user/createUser
   2) addition /user/createQuote, view /user/getQuote /user/getRandomQuote, modification /user/editQuote, deletion /user/deleteQuote of qotes.
-  3) 
+  3) voting on quotes (either upvote or downvote) /voteForAQuote
+  4) Review of any number of the top citations specified in the request /showSetOfQuotes (The model contains information on all quotes put into the model. Its display depends on the implementation of          frontend, which was not included in the task.)
 
