@@ -22,7 +22,7 @@ ability to deliver your work to a production-like environment, and to evaluate y
 
 -------------------------------------------------------------------------- Result --------------------------------------------------------------------------
 
-I've done the assignment. However, a lot of time was spent on learning Linux, Docker, and deploying the application on a remote server. 
+I've done the assignment. However, a lot of time was spent on learning Linux, Docker, and deploying the application on a remote hosting. 
 Therefore, I certainly did not finish the task on time, but I leave it as a project demonstrating my skills.
 As a result, the project meets all the requirements.
 
