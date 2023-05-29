@@ -32,9 +32,10 @@ Satisfied project requirements:
   3) 
     3.1 I created docker-compose.yaml for local work with a project using docker-compose
     3.2 I decided to do both options and deploy docker image on the server https://vds.selectel.ru at the address 45.8.249.143:7777
-    3.3 I also decided to try to deploy the server on another hosting and without a Docker container to assess the difference in the complexity of deployment using docker and without
+    3.3 I also decided to try to deploy the server on another hosting and without a Docker container to assess the difference in the complexity of deployment using docker and without.
         I have placed my war artifact on the hosting https://cp.jino.ru this time using the domain http://kameleon-test-task.ru:49329
-        Work on both hosting servers was tested using Postman and everything worked fine. However, the hosting was paid for a month for training purposes. And after a month, the server will no longer work.
+        Work on both hosting servers was tested using Postman and everything worked fine. However, the hosting was paid for a month for training purposes. And after a month, the server will no longer
+        work.
   6) In my project I used in-memory database H2
   7) Java and Spring Boot were used for the project
 
