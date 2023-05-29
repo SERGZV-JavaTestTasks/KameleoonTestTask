@@ -36,8 +36,8 @@ Satisfied project requirements:
         I have placed my war artifact on the hosting https://cp.jino.ru this time using the domain http://kameleon-test-task.ru:49329
         Work on both hosting servers was tested using Postman and everything worked fine. However, the hosting was paid for a month for training purposes. And after a month, the server will no longer
         work.
-  6) In my project I used in-memory database H2
-  7) Java and Spring Boot were used for the project
+  4) In my project I used in-memory database H2
+  5) Java and Spring Boot were used for the project
 
 The project API allows you to:
   1) creation of a user account /user/createUser
