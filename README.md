@@ -21,6 +21,7 @@ More to show your development skills, respect of best practices, understanding o
 ability to deliver your work to a production-like environment, and to evaluate your productivity.
 
 -------------------------------------------------------------------------- Result --------------------------------------------------------------------------
+
 I've done the assignment. However, a lot of time was spent on learning Linux, Docker, and deploying the application on a remote server. 
 Therefore, I certainly did not finish the task on time, but I leave it as a project demonstrating my skills.
 As a result, the project meets all the requirements.
