@@ -25,4 +25,9 @@ I've done the assignment. However, a lot of time was spent on learning Linux, Do
 Therefore, I certainly did not finish the task on time, but I leave it as a project demonstrating my skills.
 As a result, the project meets all the requirements.
 1) The project is published here on GitHub ✓
+2) The project Image was packaged in a Docker container and uploaded to DockerHub https://hub.docker.com/repository/docker/sergzv/kameleoon/general
+3) I created docker-compose.yaml for local work with a project using docker-compose
+4) I decided to do both options and deploy docker image on the server https://vds.selectel.ru at the address 45.8.249.143:7777
+5) I also decided to try to deploy the server on another hosting and without a Docker container to assess the difference in the complexity of deployment using docker and without
+   I have placed my war artifact on the hosting https://cp.jino.ru this time using the domain http://kameleon-test-task.ru:49329
 
