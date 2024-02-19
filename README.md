@@ -20,7 +20,7 @@ The full exercise can take about 6-8 hours (for a middle-level developer; longer
 More to show your development skills, respect of best practices, understanding of the web development model (client, server),
 ability to deliver your work to a production-like environment, and to evaluate your productivity.
 
------------------------------------------------------------------ Result --------------------------------------------------------------------------
+-------------------------------------------------------------------- Result -------------------------------------------------------------------------
 
 I've done the assignment. However, a lot of time was spent on learning Linux, Docker, and deploying the application on a remote hosting. 
 Therefore, I certainly did not finish the task on time, but I leave it as a project demonstrating my skills.
